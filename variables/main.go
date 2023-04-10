@@ -2,6 +2,7 @@ package main
 
 import(
 	"fmt"
+	"unsafe"
 )
 
 func main(){
@@ -38,5 +39,30 @@ func main(){
 
 	fmt.Println()
 	var my8bitsIntVar int8
+	var my16bitsIntVar int16
+	var my32bitsIntVar int32
+	var my64bitsIntVar int64
+
 	fmt.Printf("Int default value: %d\n", my8bitsIntVar)
+	//%d valores numericos
+	//%s string
+	//%f flotantes
+
+	fmt.Printf("type: %T, bytes: %d, bits: %d\n", my8bitsIntVar, 
+		unsafe.Sizeof(my8bitsIntVar), 
+		unsafe.Sizeof(my8bitsIntVar) * 8)
+
+	fmt.Printf("type: %T, bytes: %d, bits: %d\n", my16bitsIntVar, 
+		unsafe.Sizeof(my16bitsIntVar), 
+		unsafe.Sizeof(my16bitsIntVar) * 8)
+
+	fmt.Printf("type: %T, bytes: %d, bits: %d\n", my32bitsIntVar, 
+		unsafe.Sizeof(my32bitsIntVar), 
+		unsafe.Sizeof(my32bitsIntVar) * 8)
+
+	fmt.Printf("type: %T, bytes: %d, bits: %d\n", my64bitsIntVar, 
+		unsafe.Sizeof(my64bitsIntVar), 
+		unsafe.Sizeof(my64bitsIntVar) * 8)
+
+
 }
